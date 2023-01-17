@@ -44,7 +44,38 @@ RSpec.describe "Requests::Api::V1::RecipesRequests", type: :request do
           expect(recipes[:data]).to be_an(Array)
           expect(recipes[:data].count).to be > 0
           expect(recipes[:data].first[:attributes][:country]).to be_a(String)
+          expect(recipes[:data].first[:attributes][:country].empty?).to eq(false)
         end
+      end
+
+      it 'only returns necessary data' do
+        get '/api/v1/recipes?country=France' 
+
+        recipes = JSON.parse(response.body, symbolize_names: true)
+
+        expect(recipes.keys).to eq([:data])
+        expect(recipes[:data].first.keys).to eq([:id, :type, :attributes])
+        expect(recipes[:data].first[:attributes].keys).to eq([:title, :url, :country, :image])
+      end
+    end
+    context 'sad path' do
+      it 'returns an empty array if the country string is empty' do
+        get '/api/v1/recipes?country='
+
+        recipes = JSON.parse(response.body, symbolize_names: true)
+
+        expect(response).to be(successful)
+        expect(recipes[:data]).to be_an(Array)
+        expect(recipes[:data].empty?).to eq(true)
+      end
+      it 'returns an empty array if the country string is empty' do
+        get '/api/v1/recipes?country=invalid_country_query'
+
+        recipes = JSON.parse(response.body, symbolize_names: true)
+
+        expect(response).to be(successful)
+        expect(recipes[:data]).to be_an(Array)
+        expect(recipes[:data].empty?).to eq(true)
       end
     end
   end
