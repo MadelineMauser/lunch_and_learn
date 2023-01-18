@@ -32,7 +32,7 @@ The learning goals for this project were:
 6. Acquire API keys/app IDs from the above APIs and place them into application.yml as described in the file
 
 ## Endpoints
-When using locally, use `localhost:300` as the root.
+When using locally, use `localhost:3000` as the root.
 - ### Recipes
 <details close>
 <summary>Get Recipes from a Country</summary>
