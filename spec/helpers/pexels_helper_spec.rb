@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe PexelsHelper do
-  xit '.images_array', :vcr do
+  it '.images_array', :vcr do
     images = PexelsHelper.images_array("france")
 
     expect(images).to be_an(Array)

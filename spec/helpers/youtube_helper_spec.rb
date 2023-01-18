@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe YoutubeHelper do
-  xit '.video', :vcr do
+  it '.video', :vcr do
     video = YoutubeHelper.video("france")
 
     expect(video).to be_a(Hash)

@@ -4,7 +4,7 @@ RSpec.describe "Learning Resources Requests", type: :request do
   describe "GET /index" do
     context 'happy path' do
  
-      xit 'returns a response', :vcr do
+      it 'returns a response', :vcr do
         get '/api/v1/learning_resources?country=France' 
 
         expect(response).to be_successful

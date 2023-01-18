@@ -1,12 +1,9 @@
 module YoutubeHelper
-  def self.recipes_array(country)
-    recipe_response = EdamamService.get_recipes(country)
-    recipe_response[:hits].map do |recipe_hash|
-      recipe_info_hash = {}
-      recipe_info_hash[:title] = recipe_hash[:recipe][:label]
-      recipe_info_hash[:url] = recipe_hash[:recipe][:uri]
-      recipe_info_hash[:image] = recipe_hash[:recipe][:image]
-      return recipe_info_hash
-    end
+  def self.video(country)
+    video_response = YoutubeService.get_video(country)
+      video_info_hash = {}
+      video_info_hash[:title] = video_response[:items].first[:snippet][:title]
+      video_info_hash[:youtube_video_id] = video_response[:items].first[:id][:videoId]
+      video_info_hash
   end
 end
