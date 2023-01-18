@@ -4,7 +4,7 @@ RSpec.describe "User Requests", type: :request do
   describe "User Registration" do
     context 'happy path' do
       it 'returns a response', :vcr do
-        post '/api/v1/users', body: {name: "John Doe", email: "jdoe@generic.com"}.to_json
+        post '/api/v1/users', headers: headers = {"CONTENT_TYPE" => "application/json", "ACCEPT" => "application/json"}, params: {"name": "John Doe", "email": "jdoe@generic.com"}.to_json
 
         expect(response).to be_successful
         expect(response).to have_http_status(201)
@@ -12,7 +12,7 @@ RSpec.describe "User Requests", type: :request do
       it 'creates a user in the database', :vcr do
         expect(User.size).to eq(0)
 
-        post '/api/v1/users', body: {name: "John Doe", email: "jdoe@generic.com"}.to_json
+        post '/api/v1/users', headers: headers = {"CONTENT_TYPE" => "application/json", "ACCEPT" => "application/json"}, params: {"name": "John Doe", "email": "jdoe@generic.com"}.to_json
 
         expect(User.size).to eq(1)
 
@@ -23,7 +23,7 @@ RSpec.describe "User Requests", type: :request do
         expect(created_user.api_key).to be_a(String)
       end
       it 'returns data of the newly created user', :vcr do
-        post '/api/v1/users', body: {name: "John Doe", email: "jdoe@generic.com"}.to_json
+        post '/api/v1/users', headers: headers = {"CONTENT_TYPE" => "application/json", "ACCEPT" => "application/json"}, params: {"name": "John Doe", "email": "jdoe@generic.com"}.to_json
 
         created_user = User.last
         returned_user = JSON.parse(response.body, symbolize_names: true)
@@ -39,7 +39,7 @@ RSpec.describe "User Requests", type: :request do
       end
 
       it 'only returns necessary data', :vcr do
-        post '/api/v1/users', body: {name: "John Doe", email: "jdoe@generic.com"}.to_json
+        post '/api/v1/users', headers: headers = {"CONTENT_TYPE" => "application/json", "ACCEPT" => "application/json"}, params: {"name": "John Doe", "email": "jdoe@generic.com"}.to_json
 
         returned_user = JSON.parse(response.body, symbolize_names: true)
 
