@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/madelinemauser/turing_work/3mod/lunch_and_learn/spec/facades/edamam_facade_spec.rb": {
+      "/Users/madelinemauser/turing_work/3mod/lunch_and_learn/spec/facades/countries_facade_spec.rb": {
         "lines": [
           1,
           null,
@@ -9,9 +9,6 @@
           1,
           1,
           null,
-          1,
-          1,
-          1,
           1,
           1,
           1,
@@ -310,54 +307,34 @@
           null
         ]
       },
-      "/Users/madelinemauser/turing_work/3mod/lunch_and_learn/app/facades/edamam_facade.rb": {
+      "/Users/madelinemauser/turing_work/3mod/lunch_and_learn/app/facades/countries_facade.rb": {
         "lines": [
           1,
           1,
-          1,
-          1,
-          20,
-          20,
-          20,
-          20,
-          20,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/madelinemauser/turing_work/3mod/lunch_and_learn/app/services/edamam_service.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          null,
-          null,
           1,
           1,
           null,
           null
         ]
       },
-      "/Users/madelinemauser/turing_work/3mod/lunch_and_learn/app/poros/recipe.rb": {
+      "/Users/madelinemauser/turing_work/3mod/lunch_and_learn/app/services/countries_service.rb": {
         "lines": [
           1,
           1,
+          1,
+          null,
           null,
           1,
-          20,
-          20,
-          20,
-          20,
+          1,
+          null,
+          null,
+          1,
+          1,
           null,
           null
         ]
       }
     },
-    "timestamp": 1674009533
+    "timestamp": 1674011034
   }
 }
