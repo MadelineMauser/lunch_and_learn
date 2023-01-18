@@ -8,6 +8,6 @@ class EdamamService
   end
   
   def self.get_recipes(country)
-    get_url("?app_key=#{ENV["edamam_api_key"]}&app_id=#{ENV["edamam_app_id"]}=#{country}&type=public")
+    get_url("?app_key=#{ENV["edamam_api_key"]}&app_id=#{ENV["edamam_app_id"]}&q=#{country}&type=public")
   end
 end
