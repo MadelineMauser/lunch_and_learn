@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2023-01-17T18:30:33-07:00">2023-01-17T18:30:33-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2023-01-17T18:37:51-07:00">2023-01-17T18:37:51-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -29,8 +29,8 @@
      </span>
      covered at
      <span class="covered_strength">
-       <span class="yellow">
-         1.0
+       <span class="red">
+         0.97
        </span>
     </span> hits/line
     )
@@ -71,9 +71,9 @@
       <tbody>
         
           <tr class="t-file">
-            <td class="strong t-file__name"><a href="#3737f82ca344bafb597f62f80e786c212eacfe5a" class="src_link" title="app/services/edamam_service.rb">app/services/edamam_service.rb</a></td>
+            <td class="strong t-file__name"><a href="#44f27f009ab5013ead1c5e7e784051adf4776ab7" class="src_link" title="app/poros/recipe.rb">app/poros/recipe.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">13</td>
+            <td class="cell--number">10</td>
             <td class="cell--number">7</td>
             <td class="cell--number">7</td>
             <td class="cell--number">0</td>
@@ -214,24 +214,24 @@
           </tr>
         
           <tr class="t-file">
-            <td class="strong t-file__name"><a href="#b2e82ddbee05d1aae8bd5cff982626a12ec7da6b" class="src_link" title="spec/rails_helper.rb">spec/rails_helper.rb</a></td>
-            <td class="yellow strong cell--number t-file__coverage">89.47 %</td>
-            <td class="cell--number">72</td>
-            <td class="cell--number">19</td>
-            <td class="cell--number">17</td>
-            <td class="cell--number">2</td>
-            <td class="cell--number">1.00</td>
-            
-          </tr>
-        
-          <tr class="t-file">
-            <td class="strong t-file__name"><a href="#d7eba5d5776da8831ef8539640fd6c7ce3648208" class="src_link" title="spec/services/edamam_service_spec.rb">spec/services/edamam_service_spec.rb</a></td>
+            <td class="strong t-file__name"><a href="#d448162723b93c5f2042ef94e6cf4f0f3d47d1ca" class="src_link" title="spec/poros/recipe_spec.rb">spec/poros/recipe_spec.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
             <td class="cell--number">17</td>
             <td class="cell--number">12</td>
             <td class="cell--number">12</td>
             <td class="cell--number">0</td>
             <td class="cell--number">1.00</td>
+            
+          </tr>
+        
+          <tr class="t-file">
+            <td class="strong t-file__name"><a href="#b2e82ddbee05d1aae8bd5cff982626a12ec7da6b" class="src_link" title="spec/rails_helper.rb">spec/rails_helper.rb</a></td>
+            <td class="yellow strong cell--number t-file__coverage">89.47 %</td>
+            <td class="cell--number">72</td>
+            <td class="cell--number">19</td>
+            <td class="cell--number">17</td>
+            <td class="cell--number">2</td>
+            <td class="cell--number">0.89</td>
             
           </tr>
         
@@ -252,9 +252,9 @@
 
       <div class="source_files">
       
-        <div class="source_table" id="3737f82ca344bafb597f62f80e786c212eacfe5a">
+        <div class="source_table" id="44f27f009ab5013ead1c5e7e784051adf4776ab7">
   <div class="header">
-    <h3>app/services/edamam_service.rb</h3>
+    <h3>app/poros/recipe.rb</h3>
     <h4>
       <span class="green">
   100.0%
@@ -285,7 +285,7 @@
 
             
 
-            <code class="ruby">class EdamamService</code>
+            <code class="ruby">class Recipe</code>
           </li>
         </div>
       
@@ -296,34 +296,12 @@
 
             
 
-            <code class="ruby">  def self.conn </code>
+            <code class="ruby">  attr_reader :title, :url, :country, :image</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="3">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    Faraday.new(url: &quot;https://api.edamam.com/api/recipes/v2&quot;)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="4">
-            
-            
-
-            
-
-            <code class="ruby">  end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="5">
+          <li class="never" data-hits="" data-linenumber="3">
             
             
 
@@ -334,13 +312,35 @@
         </div>
       
         <div>
+          <li class="covered" data-hits="1" data-linenumber="4">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def initialize(recipe_info, country)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="5">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    @title = recipe_info[:title]</code>
+          </li>
+        </div>
+      
+        <div>
           <li class="covered" data-hits="1" data-linenumber="6">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">  def self.get_url(url)</code>
+            <code class="ruby">    @url = recipe_info[:url]</code>
           </li>
         </div>
       
@@ -351,18 +351,18 @@
 
             
 
-            <code class="ruby">    JSON.parse(conn.get(url).body, symbolize_names: true)</code>
+            <code class="ruby">    @country = country</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="8">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="8">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">  end</code>
+            
+
+            <code class="ruby">    @image = recipe_info[:image]</code>
           </li>
         </div>
       
@@ -373,45 +373,12 @@
 
             
 
-            <code class="ruby">  </code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="10">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">  def self.get_recipes(country)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="11">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    get_url(&quot;?app_key=#{ENV[&quot;edamam_api_key&quot;]}&amp;app_id=#{ENV[&quot;edamam_app_id&quot;]}&amp;q=#{country}&amp;type=public&quot;)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="12">
-            
-            
-
-            
-
             <code class="ruby">  end</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="13">
+          <li class="never" data-hits="" data-linenumber="10">
             
             
 
@@ -2635,6 +2602,224 @@
 </div>
 
       
+        <div class="source_table" id="d448162723b93c5f2042ef94e6cf4f0f3d47d1ca">
+  <div class="header">
+    <h3>spec/poros/recipe_spec.rb</h3>
+    <h4>
+      <span class="green">
+  100.0%
+</span>
+
+      lines covered
+    </h4>
+
+    
+
+    <div class="t-line-summary">
+      <b>12</b> relevant lines.
+      <span class="green"><b>12</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+
+    
+
+  </div>
+
+  <pre>
+    <ol>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="1">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">require &#39;rails_helper&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="2">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="3">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">RSpec.describe Recipe do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="4">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  describe &#39;existence&#39; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="5">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    it &#39;exists and has attributes&#39; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="6">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      recipe_info = {title: &quot;Fried Rice&quot;, url: &quot;example.com&quot;, image: &quot;example.com/image&quot;}</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="7">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      country = &quot;china&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="8">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      recipe = Recipe.new(recipe_info, country)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="9">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="10">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      expect(recipe).to be_a(Recipe)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="11">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      expect(recipe.title).to eq(&quot;Fried Rice&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="12">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      expect(recipe.url).to eq(&quot;example.com&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="13">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      expect(recipe.country).to eq(&quot;china&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="14">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      expect(recipe.image).to eq(&quot;example.com/image&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="15">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="16">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="17">
+            
+            
+
+            
+
+            <code class="ruby">end</code>
+          </li>
+        </div>
+      
+    </ol>
+  </pre>
+</div>
+
+      
         <div class="source_table" id="b2e82ddbee05d1aae8bd5cff982626a12ec7da6b">
   <div class="header">
     <h3>spec/rails_helper.rb</h3>
@@ -3410,8 +3595,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="69">
-            <span class="hits">2</span>
+          <li class="covered" data-hits="1" data-linenumber="69">
+            <span class="hits">1</span>
             
 
             
@@ -3421,8 +3606,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="70">
-            <span class="hits">2</span>
+          <li class="covered" data-hits="1" data-linenumber="70">
+            <span class="hits">1</span>
             
 
             
@@ -3444,224 +3629,6 @@
       
         <div>
           <li class="never" data-hits="" data-linenumber="72">
-            
-            
-
-            
-
-            <code class="ruby">end</code>
-          </li>
-        </div>
-      
-    </ol>
-  </pre>
-</div>
-
-      
-        <div class="source_table" id="d7eba5d5776da8831ef8539640fd6c7ce3648208">
-  <div class="header">
-    <h3>spec/services/edamam_service_spec.rb</h3>
-    <h4>
-      <span class="green">
-  100.0%
-</span>
-
-      lines covered
-    </h4>
-
-    
-
-    <div class="t-line-summary">
-      <b>12</b> relevant lines.
-      <span class="green"><b>12</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
-    </div>
-
-    
-
-  </div>
-
-  <pre>
-    <ol>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="1">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">require &#39;rails_helper&#39;</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="2">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="3">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">RSpec.describe EdamamService do</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="4">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">  describe &#39;.get_recipes&#39; do</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="5">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    it &#39;returns recipe results for the inputted country with the needed attributes&#39;, :vcr do</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="6">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">      response = EdamamService.get_recipes(&quot;france&quot;)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="7">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="8">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">      expect(response).to be_a(Hash)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="9">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">      expect(response[:hits]).to be_an(Array)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="10">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">      expect(response[:hits].first).to be_a(Hash)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="11">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">      expect(response[:hits].first[:recipe]).to be_a(Hash)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="12">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">      expect(response[:hits].first[:recipe][:uri]).to be_a(String)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="13">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">      expect(response[:hits].first[:recipe][:label]).to be_a(String)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="14">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">      expect(response[:hits].first[:recipe][:image]).to be_a(String)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="15">
-            
-            
-
-            
-
-            <code class="ruby">    end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="16">
-            
-            
-
-            
-
-            <code class="ruby">  end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="17">
             
             
 

@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/madelinemauser/turing_work/3mod/lunch_and_learn/spec/services/edamam_service_spec.rb": {
+      "/Users/madelinemauser/turing_work/3mod/lunch_and_learn/spec/poros/recipe_spec.rb": {
         "lines": [
           1,
           null,
@@ -9,9 +9,9 @@
           1,
           1,
           1,
+          1,
+          1,
           null,
-          1,
-          1,
           1,
           1,
           1,
@@ -92,8 +92,8 @@
           1,
           1,
           1,
-          2,
-          2,
+          1,
+          1,
           1,
           null
         ]
@@ -313,17 +313,14 @@
           null
         ]
       },
-      "/Users/madelinemauser/turing_work/3mod/lunch_and_learn/app/services/edamam_service.rb": {
+      "/Users/madelinemauser/turing_work/3mod/lunch_and_learn/app/poros/recipe.rb": {
         "lines": [
           1,
           1,
-          1,
-          null,
           null,
           1,
           1,
-          null,
-          null,
+          1,
           1,
           1,
           null,
@@ -331,6 +328,6 @@
         ]
       }
     },
-    "timestamp": 1674005433
+    "timestamp": 1674005871
   }
 }
