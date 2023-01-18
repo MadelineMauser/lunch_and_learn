@@ -67,7 +67,7 @@ RSpec.describe "Recipes Requests", type: :request do
         expect(recipes[:data]).to be_an(Array)
         expect(recipes[:data].empty?).to eq(true)
       end
-      it 'returns an empty array if the country string is empty', :vcr do
+      it 'returns an empty array if the country string does not bring up any recipes', :vcr do
         get '/api/v1/recipes?country=invalid_country_query'
 
         recipes = JSON.parse(response.body, symbolize_names: true)
