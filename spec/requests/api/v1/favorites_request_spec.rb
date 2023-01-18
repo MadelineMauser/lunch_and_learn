@@ -4,7 +4,7 @@ RSpec.describe "Favorites Requests", type: :request do
   describe "Add Favorites" do
     context 'happy path' do
       before :all do
-        User.create!(name: "John Doe", email: "jdoe@generic.com", api_key: "qwertyuiop")
+        @john_user = User.create!(name: "John Doe", email: "jdoe@generic.com", api_key: "qwertyuiop")
       end
       it 'returns a response' do
         post '/api/v1/favorites', headers: headers = {"CONTENT_TYPE" => "application/json", "ACCEPT" => "application/json"}, params: {"api_key": "qwertyuiop", "country": "thailand", "recipe_link": "recipe.com/recipe", "recipe_title": "Pad Thai"}.to_json
@@ -21,7 +21,7 @@ RSpec.describe "Favorites Requests", type: :request do
 
         created_favorite = Favorite.last
 
-        expect(created_favorite.api_key).to eq("qwertyuiop")
+        expect(created_favorite.user_id).to eq(@john_user.id)
         expect(created_favorite.country).to eq("thailand")
         expect(created_favorite.recipe_link).to eq("recipe.com/recipe")
         expect(created_favorite.recipe_title).to eq("Pad Thai")
