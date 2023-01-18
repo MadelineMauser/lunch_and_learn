@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe EdamamService do
   describe '.get_recipes' do
-    it 'returns recipe results for the inputted country with the needed attributes' do
+    it 'returns recipe results for the inputted country with the needed attributes', :vcr do
       response = EdamamService.get_recipes("france")
 
       expect(response).to be_a(Hash)
