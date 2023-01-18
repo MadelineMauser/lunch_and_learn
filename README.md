@@ -4,6 +4,7 @@
 
 ## Table of Contents
 - [Learning Goals](#learning-goals)
+- [External APIs](#external-apis)
 - [Setup](#setup)
 - [Endpoints](#endpoints)
 
