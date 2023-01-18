@@ -82,14 +82,14 @@ RSpec.describe "Favorites Requests", type: :request do
         expect(returned_favorites).to be_a(Hash)
         expect(returned_favorites[:data]).to be_an(Array)
         expect(returned_favorites[:data].size).to eq(2)
-        expect(returned_favorites[:data].first[:id]).to eq(@favorite1.id)
-        expect(returned_favorites[:data].last[:id]).to eq(@favorite2.id)
+        expect(returned_favorites[:data].first[:id]).to eq(@favorite1.id.to_s)
+        expect(returned_favorites[:data].last[:id]).to eq(@favorite2.id.to_s)
         expect(returned_favorites[:data].first[:type]).to eq("favorite")
         expect(returned_favorites[:data].first[:attributes]).to be_a(Hash)
         expect(returned_favorites[:data].first[:attributes][:recipe_title]).to eq(@favorite1.recipe_title)
         expect(returned_favorites[:data].first[:attributes][:recipe_link]).to eq(@favorite1.recipe_link)
         expect(returned_favorites[:data].first[:attributes][:country]).to eq(@favorite1.country)
-        expect(returned_favorites[:data].first[:attributes][:created_at]).to eq(@favorite1.created_at)
+        expect(returned_favorites[:data].first[:attributes][:created_at].to_date).to eq(@favorite1.created_at.to_date)
       end
 
       it 'only returns the necessary data' do
@@ -98,8 +98,8 @@ RSpec.describe "Favorites Requests", type: :request do
         returned_favorites = JSON.parse(response.body, symbolize_names: true)
 
         expect(returned_favorites.keys).to eq([:data])
-        expect(returned_favorites.[:data].first.keys).to eq([:id, :type, :attributes])
-        expect(returned_favorites.[:data].first[:attributes].keys).to eq([:recipe_title, :recipe_link, :country, :created_at])
+        expect(returned_favorites[:data].first.keys).to eq([:id, :type, :attributes])
+        expect(returned_favorites[:data].first[:attributes].keys).to eq([:recipe_title, :recipe_link, :country, :created_at])
       end
     end
 
