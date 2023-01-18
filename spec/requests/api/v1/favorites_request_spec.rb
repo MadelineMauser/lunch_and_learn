@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe "Favorites Requests", type: :request do
   describe "Add Favorites" do
     context 'happy path' do
-      before :all do
+      before :each do
         @john_user = User.create!(name: "John Doe", email: "jdoe@generic.com", api_key: "qwertyuiop")
       end
       it 'returns a response' do
@@ -17,7 +17,7 @@ RSpec.describe "Favorites Requests", type: :request do
 
         post '/api/v1/favorites', headers: headers = {"CONTENT_TYPE" => "application/json", "ACCEPT" => "application/json"}, params: {"api_key": "qwertyuiop", "country": "thailand", "recipe_link": "recipe.com/recipe", "recipe_title": "Pad Thai"}.to_json
 
-        expect(favorite.count).to eq(1)
+        expect(Favorite.count).to eq(1)
 
         created_favorite = Favorite.last
 
@@ -32,7 +32,7 @@ RSpec.describe "Favorites Requests", type: :request do
         response_body = JSON.parse(response.body, symbolize_names: true)
 
         expect(response_body[:success]).to eq("Favorite added successfully")
-        expect(response_body.keys),to eq([:success])
+        expect(response_body.keys).to eq([:success])
       end
     end
 
@@ -46,7 +46,9 @@ RSpec.describe "Favorites Requests", type: :request do
         expect(response_body[:error]).to eq("API key is invalid")
       end
       it 'returns an error if the favorite fails to be created' do
-        post '/api/v1/favorites', headers: headers = {"CONTENT_TYPE" => "application/json", "ACCEPT" => "application/json"}, params: {"api_key": "notavalidkey", "recipe_link": "recipe.com/recipe", "recipe_title": "Pad Thai"}.to_json
+        User.create!(name: "John Doe", email: "jdoe@generic.com", api_key: "qwertyuiop")
+
+        post '/api/v1/favorites', headers: headers = {"CONTENT_TYPE" => "application/json", "ACCEPT" => "application/json"}, params: {"api_key": "qwertyuiop", "recipe_link": "recipe.com/recipe", "recipe_title": "Pad Thai"}.to_json
         
         response_body = JSON.parse(response.body, symbolize_names: true)
 
