@@ -1,9 +1,9 @@
 class Api::V1::RecipesController < ApplicationController
   def index
     if params[:country]
-      render json: RecipeSerializer.new(EdamamFacade.recipes(params[:country].downcase))
+      render json: RecipeSerializer.new(RecipesFacade.recipes(params[:country].downcase))
     else
-      render json: RecipeSerializer.new(EdamamFacade.recipes(CountriesFacade.random_country))
+      render json: RecipeSerializer.new(RecipesFacade.recipes(CountriesHelper.random_country))
     end
   end
 end

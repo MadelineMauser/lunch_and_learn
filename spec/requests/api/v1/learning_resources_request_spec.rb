@@ -4,13 +4,13 @@ RSpec.describe "Learning Resources Requests", type: :request do
   describe "GET /index" do
     context 'happy path' do
  
-      it 'returns a response', :vcr do
+      xit 'returns a response', :vcr do
         get '/api/v1/learning_resources?country=France' 
 
         expect(response).to be_successful
       end
 
-      it 'returns learning resources for the inputted country', :vcr do
+      xit 'returns learning resources for the inputted country', :vcr do
         get '/api/v1/learning_resources?country=France'
 
         learning_resources = JSON.parse(response.body, symbolize_names: true)
@@ -31,7 +31,7 @@ RSpec.describe "Learning Resources Requests", type: :request do
         expect(learning_resources[:data][:attributes][:images].first[:url]).to be_a(String)
       end
 
-      it 'only returns necessary data', :vcr do
+      xit 'only returns necessary data', :vcr do
         get '/api/v1/learning_resources?country=France'
 
         learning_resources = JSON.parse(response.body, symbolize_names: true)

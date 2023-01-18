@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe EdamamHelper do
   it '.recipes', :vcr do
-    recipes = EdamamHelper.recipes("france")
+    recipes = EdamamHelper.recipes_array("france")
 
     expect(recipes).to be_an(Array)
     expect(recipes.first).to be_a(Hash)

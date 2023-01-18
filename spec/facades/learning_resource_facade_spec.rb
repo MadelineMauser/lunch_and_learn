@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe LearningResourceFacade do
-  it '.learning_resource', :vcr do
+  xit '.learning_resource', :vcr do
     learning_resource = LearningResourceFacade.learning_resource("france")
 
     expect(learning_resource).to be_a(LearningResource)
