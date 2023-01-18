@@ -31,7 +31,7 @@ RSpec.describe "User Requests", type: :request do
         expect(returned_user).to be_a(Hash)
         expect(returned_user[:data]).to be_a(Hash)
         expect(returned_user[:data][:type]).to eq("user")
-        expect(returned_user[:data][:id].to_i).to eq(created_user.id)
+        expect(returned_user[:data][:id]).to eq(created_user.id.to_s)
         expect(returned_user[:data][:attributes]).to be_a(Hash)
         expect(returned_user[:data][:attributes][:name]).to eq(created_user.name)
         expect(returned_user[:data][:attributes][:email]).to eq(created_user.email)
