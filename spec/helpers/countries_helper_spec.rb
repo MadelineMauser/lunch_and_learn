@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe CountriesFacade do
+RSpec.describe CountriesHelper do
   it '.random_country', :vcr do
     country = CountriesFacade.random_country
 

@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe EdamamFacade do
+RSpec.describe RecipesFacade do
   it '.recipes', :vcr do
-    recipes = EdamamFacade.recipes("france")
+    recipes = RecipesFacade.recipes("france")
 
     expect(recipes).to be_an(Array)
     expect(recipes.first).to be_a(Recipe)

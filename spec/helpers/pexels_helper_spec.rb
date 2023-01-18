@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe PexelsFacade do
+RSpec.describe PexelsHelper do
   it '.images_array', :vcr do
-    images = PexelsFacade.images_array("france")
+    images = PexelsHelper.images_array("france")
 
     expect(images).to be_an(Array)
     expect(images.count).to be <= 10

@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe YoutubeFacade do
+RSpec.describe YoutubeHelper do
   it '.video', :vcr do
-    video = YoutubeFacade.video("france")
+    video = YoutubeHelper.video("france")
 
     expect(video).to be_a(Hash)
     expect(video[:title]).to be_a(String)
