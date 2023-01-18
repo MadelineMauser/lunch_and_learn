@@ -39,6 +39,7 @@ group :development, :test do
   gem 'figaro'
   gem 'simplecov'
   gem 'jsonapi-serializer'
+  gem 'shoulda-matchers'
 end
 
 group :development do
