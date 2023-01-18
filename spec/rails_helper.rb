@@ -65,6 +65,7 @@ end
 
 VCR.configure do |config|
   config.cassette_library_dir = "spec/fixtures/vcr_cassettes"
+  config.default_cassette_options = { :record => :new_episodes }
   config.hook_into :webmock
   config.filter_sensitive_data('<edamam_api_key>') { ENV['edamam_api_key'] }
   config.filter_sensitive_data('<edamam_app_id>') { ENV['edamam_app_id'] }

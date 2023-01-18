@@ -38,6 +38,7 @@ group :development, :test do
   gem 'faraday'
   gem 'figaro'
   gem 'simplecov'
+  gem 'jsonapi-serializer'
 end
 
 group :development do
