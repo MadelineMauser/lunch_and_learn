@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe "Edamam Service" do
+RSpec.describe EdamamService do
   describe '.get_recipes' do
     it 'returns recipe results for the inputted country with the needed attributes' do
-      response = EdamamService.get_recipes(france)
+      response = EdamamService.get_recipes("france")
 
       expect(response).to be_a(Hash)
       expect(response[:hits]).to be_an(Array)

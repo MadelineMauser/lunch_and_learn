@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Requests::Api::V1::RecipesRequests", type: :request do
+RSpec.describe "Recipes Requests", type: :request do
   describe "GET /index" do
     context 'happy path' do
       context 'when a country is given as a param' do
