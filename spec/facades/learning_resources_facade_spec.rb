@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe LearningResourceFacade do
+RSpec.describe LearningResourcesFacade do
   it '.learning_resource', :vcr do
-    learning_resource = LearningResourceFacade.learning_resource("france")
+    learning_resource = LearningResourcesFacade.learning_resource("france")
 
     expect(learning_resource).to be_a(LearningResource)
     expect(learning_resource.country).to be_a(String)
