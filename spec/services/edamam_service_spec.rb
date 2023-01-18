@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Edamam Service", type: :request do
+RSpec.describe "Edamam Service" do
   describe '.get_recipes' do
     it 'returns recipe results for the inputted country with the needed attributes' do
       response = EdamamService.get_recipes(france)
