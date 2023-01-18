@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe PexelsService do
   describe '.get_images' do
-    xit 'returns image results for the inputted country with the needed attributes', :vcr do
+    it 'returns image results for the inputted country with the needed attributes', :vcr do
       response = PexelsService.get_images("france")
 
       expect(response).to be_a(Hash)
